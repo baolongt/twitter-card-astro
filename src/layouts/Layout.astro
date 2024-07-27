@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import image from "../../public/pedro.png";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="twitter:card" content="player" />
+    <meta name="twitter:site" content="@longtran" />
+    <meta name="twitter:title" content="Test app" />
+    <meta name="twitter:description" content="Brief description of your app" />
+    <meta
+      name="twitter:player"
+      content="https://7680-1-54-73-200.ngrok-free.app/info"
+    />
+    <meta name="twitter:player:width" content="360" />
+    <meta name="twitter:player:height" content="560" />
+    <meta
+      name="twitter:image"
+      content="https://app.ekubo.org/pwa-512x512.png"
+    />
+    <meta property="og:url" content="https://7680-1-54-73-200.ngrok-free.app" />
+    <meta property="og:title" content="test" />
+    <meta property="og:description" content="test" />
+    <meta property="og:image" content="https://app.ekubo.org/pwa-512x512.png" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>
